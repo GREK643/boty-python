@@ -1,0 +1,105 @@
+0. Ogarniamy środowisko w którym da się wywoływać te komendy:
+    * Wersja 0 (dla tych, co już wiedzieli co dobre): ktoś ma już linuxa albo maka.
+    * Wersja 1 (jedyna jak ktoś jeszcze ma windowsa): usuwamy windowsa, instalujemy linuxa.
+    * Wersja 2 (dla lubiących cierpienie): instalujemy git bash na windowsie.
+
+1. Jak jeszcze nie mamy, to zakładamy konto na githubie.
+
+2. Tworzymy nowe repo: 
+    * Nadajemy mu nazwę.
+    * Zaznaczamy, żeby było prywatne.
+    * Rozsyłamy do pozostałych zaproszenie do edycji.
+
+3. Klonujemy repo:
+    * Znajdujemy link do sklonowania.
+    * klonowanie repo:
+        git clone link_skopiowany_z_githuba
+    * jesteśmy proszeni o nazwę użytkownika i hasło, więc wyklikujemy stworzenie głupiego tokena:
+        hamburger menu po prawej na górze -> settings -> 
+        -> developer settings po lewej na dole -> personal access tokens
+
+4. Zakładamy readme:
+    cd nazwa_folderu_z_repo
+    touch README.md
+    * otwieramy plik README.md w dowolnym edytorze, 
+      będziemy tam wklejać kolejno wszystkie komendy 
+      do instalacji i odpalania naszego repo
+
+5. Tworzymy virtualenva (wirtualne środowisko w pajtonie)
+    * (mac) brew install virtualenv
+    * (linux) sudo apt install virtualenv
+    * (windows) nie mam pojęcia
+    * which python3 (kopiujemy wynik)
+    * virtualenv -p skopiowany_wynik poprzedniej komendy venv 
+
+6. Uruchamiamy virtualenva:
+    * source venv/bin/activate
+    * od teraz, dopóki nie zamkniemy terminala, jesteśmy w virtualenvie
+
+7. Instalacja pakietów w virtualenv:
+    * pip3 install python-binance
+
+8. Tworzymy plik requirements.txt:
+    * touch requirements.txt
+    * otwieramy plik requirements.txt w dowolnym edytorze i linijka po linijce
+      zapisujemy do niego wszystkie zainstalowane biblioteki w pajtonie
+
+9. Od teraz instalacji brakujących pakietów będzie można dokonywać poprzez komendę:
+    * pip3 install -r requirements.txt
+
+10. Tworzymy plik main.py, w nim będzie nasz program:
+    * touch main.py
+    
+11. Otwieramy plik main.py, dokonujemy edycji, zapisujemy.
+
+12. Tworzymy komita "na pałę":
+    (obejrzenie zmian)
+    * git status
+    * git diff
+
+    (dodawanie plików do komita)
+    * git add README.md
+    * git add main.py
+    * git add requirements.txt
+
+    (obejrzenie komita)
+    * git status
+
+    (komitowanie)
+    * git commit -m "mesydż komita"
+    * git push
+
+13. Jeśli ktoś dokonał jakichś zmian na repo, zmiany pobieramy komendą:
+    * git pull
+
+14: Nowa osoba dołączająca się do pracy w repo powinna:
+    * mieć dostęp do repo
+    * zrobić sobie głupiego tokena
+    * znaleźć link do klonowania
+    * git clone link_do_klonowania
+    * wywołać komendy z README.md do instalacji (wszystko powinno tam być)
+    * wywołać komendy z README.md do uruchomienia programu (też wszystko powinno być)
+    * móc sobie dowolnie zmieniać i pracować
+    
+14: Zmiany w repo przez brancza i pull requesta:
+    * stworzenie issusa na stronie githuba
+    * stworzenie brancza u siebie lokalnie:
+      * git branch 
+      * git branch branch_name
+      * git branch
+      * git checkout branch_name
+    * dokonanie zmian w plikach i stworzenie komita:
+      * git status
+      * git diff
+      * git add nazwa_pliku_ze zmianami (powtarzamy dla każdego zmienionego pliku)
+      * git commit
+      * podajemy nazwę i opis komita
+      * git push
+      * kopiujemy komendę co się pojawia (set upstream origin)
+    * stworzenie pull requesta:
+      * klikamy na pull requesty na stronie
+      * wybieramy naszego brancza, robimy z niego pull requesta
+      * wypełniamy co tam jest do wypełnienia
+      * wybieramy reviewerów
+      * łączymy pull requesta z issusem
+    * reviewerzy czytają zmiany, akceptują pull requesta, mergują z mainem

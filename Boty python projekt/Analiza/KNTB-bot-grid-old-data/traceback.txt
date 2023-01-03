@@ -1,0 +1,15 @@
+Failed to create a SELL order. TIME:2023-01-03 11:57:48.269549
+Traceback (most recent call last):
+  File "c:\Users\Kacper\Desktop\studia\Boty python projekt\Analiza\KNTB-bot-grid-old-data\bot copy 2.py", line 105, in <module>
+    order = client.create_order(
+  File "C:\Users\Kacper\anaconda3\lib\site-packages\binance\client.py", line 1397, in create_order
+    return self._post('order', True, data=params)
+  File "C:\Users\Kacper\anaconda3\lib\site-packages\binance\client.py", line 374, in _post
+    return self._request_api('post', path, signed, version, **kwargs)
+  File "C:\Users\Kacper\anaconda3\lib\site-packages\binance\client.py", line 334, in _request_api
+    return self._request(method, uri, signed, **kwargs)
+  File "C:\Users\Kacper\anaconda3\lib\site-packages\binance\client.py", line 315, in _request
+    return self._handle_response(self.response)
+  File "C:\Users\Kacper\anaconda3\lib\site-packages\binance\client.py", line 324, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-1013): Filter failure: MIN_NOTIONAL

@@ -1,0 +1,15 @@
+Failed to create a BUY order. TIME:2022-06-08 18:35:15.117137
+Traceback (most recent call last):
+  File "bot_grid_sentiment_fast.py", line 289, in <module>
+    order = client.create_order(
+  File "/usr/local/lib/python3.8/dist-packages/binance/client.py", line 1397, in create_order
+    return self._post('order', True, data=params)
+  File "/usr/local/lib/python3.8/dist-packages/binance/client.py", line 374, in _post
+    return self._request_api('post', path, signed, version, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/binance/client.py", line 334, in _request_api
+    return self._request(method, uri, signed, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/binance/client.py", line 315, in _request
+    return self._handle_response(self.response)
+  File "/usr/local/lib/python3.8/dist-packages/binance/client.py", line 324, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2010): Account has insufficient balance for requested action.
